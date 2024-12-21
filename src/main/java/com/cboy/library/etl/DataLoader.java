@@ -1,4 +1,4 @@
-package com.cboy.library.data;
+package com.cboy.library.etl;
 
 public interface DataLoader {
 
