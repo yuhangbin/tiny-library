@@ -10,5 +10,9 @@ Features:
 
 ## References
 - https://github.com/asaikali/spring-ai-zero-to-hero.git
-- https://github.com/pgvector/pgvector
 - https://ollama.com/library/all-minilm:latest
+
+### PostgreSQL
+- https://github.com/pgvector/pgvector
+- https://www.postgresql.org/docs/11/index.html
+- https://neon.tech/postgresql/tutorial
