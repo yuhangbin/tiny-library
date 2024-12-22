@@ -20,13 +20,12 @@ public class BookETLTask {
         // read a book (such as: 'k8s in action')
         // spilt this book into many segments
         List<Document> bookSegments = read();
-        // embedding segments
-        bookSegments = tokenize(bookSegments);
+        // embedding segments (don't know how it works)
         // store into vector database
         vectorStore.add(bookSegments);
     }
 
-    private List<Document> read() {
+    public List<Document> read() {
         PagePdfDocumentReader pdfReader = new PagePdfDocumentReader("classpath:books/Kubernetes in Action.pdf",
                 PdfDocumentReaderConfig.builder()
                         .withPageTopMargin(0)
@@ -37,8 +36,8 @@ public class BookETLTask {
         return pdfReader.read();
     }
 
-    private List<Document> tokenize(List<Document> documents) {
-        return null;
+    public List<Document> tokenize(List<Document> documents) {
+        return documents;
     }
 
 

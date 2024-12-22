@@ -1,4 +1,4 @@
-package com.cboy.library;
+package com.cboy.library.task;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,15 +10,24 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-public class VectorStoreTest {
+public class BookETLTaskTest {
+
+    @Autowired
+    BookETLTask bookETLTask;
 
     @Autowired
     VectorStore vectorStore;
 
     @Test
-    void testAdd() {
-        vectorStore.add(List.of(new Document("hello world")));
-        List<Document> documents = vectorStore.similaritySearch("world");
+    void testRead() {
+        List<Document> documents = bookETLTask.read();
+        Assertions.assertFalse(documents.isEmpty());
+    }
+
+    @Test
+    void testETL() {
+        bookETLTask.ETL();
+        List<Document> documents = vectorStore.similaritySearch("What is Pod?");
         Assertions.assertNotNull(documents);
     }
 }
