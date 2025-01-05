@@ -11,6 +11,7 @@ Features:
 ## References
 - https://github.com/asaikali/spring-ai-zero-to-hero.git
 - https://ollama.com/library/all-minilm:latest
+- https://github.com/ollama/ollama/blob/main/docs/api.md#generate-embeddings
 
 ### PostgreSQL
 - https://github.com/pgvector/pgvector
