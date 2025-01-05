@@ -1,5 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:15432/ollama
-    username: postgres
-    password: password
