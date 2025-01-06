@@ -1,16 +1,15 @@
 from flask import Flask
 from .database import db
-from .routes import init_routes
+from .routes import book_bp
 
-def create_app():
+def create_app(config_object=None):
     app = Flask(__name__)
-    app.config.from_object('config.Config')
-
+    
+    if config_object:
+        app.config.from_object(config_object)
+    
     db.init_app(app)
-
-    with app.app_context():
-        db.create_all()
-
-    init_routes(app)
-
+    
+    app.register_blueprint(book_bp, url_prefix='/api')
+    
     return app 

@@ -1,16 +1,17 @@
 from datetime import datetime
-from .database import db
+from sqlalchemy import Column, Integer, String, Date, DateTime
+from .database import Base
 
-class Book(db.Model):
+class Book(Base):
     __tablename__ = 'books'
 
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(200), nullable=False)
-    author = db.Column(db.String(100), nullable=False)
-    isbn = db.Column(db.String(13), unique=True)
-    published_date = db.Column(db.Date)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    id = Column(Integer, primary_key=True)
+    title = Column(String(200), nullable=False)
+    author = Column(String(100), nullable=False)
+    isbn = Column(String(13), unique=True)
+    published_date = Column(Date)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def to_dict(self):
         return {
