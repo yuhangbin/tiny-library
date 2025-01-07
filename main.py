@@ -8,9 +8,9 @@ def get_database_connection():
         conn = psycopg2.connect(
             dbname="library",
             user="postgres",
-            password="postgres",  # Make sure this matches your docker-compose password
+            password="password",  # Make sure this matches your docker-compose password
             host="localhost",
-            port="5432"
+            port="15432"
         )
         return conn
     except psycopg2.Error as e:
