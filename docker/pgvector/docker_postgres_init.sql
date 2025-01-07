@@ -1,4 +1,8 @@
-CREATE DATABASE IF NOT EXISTS library;
+-- First check if database exists, then create if it doesn't
+SELECT 'CREATE DATABASE library'
+WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'library')
+
+\c library;
 
 CREATE TABLE IF NOT EXISTS book (
     id SERIAL PRIMARY KEY,
