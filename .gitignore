@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -23,11 +22,24 @@ wheels/
 
 # Virtual Environment
 venv/
+env/
 ENV/
 
 # IDE
 .idea/
 .vscode/
+*.swp
+*.swo
 
 # Environment variables
 .env
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Docker
+.docker/
+
+# Logs
+*.log
